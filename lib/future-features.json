@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2026-06-22",
+    "description": "Scrapbook of future feature ideas and business expansions for Three Daughters Landscaping"
+  },
+  "features": [
+    {
+      "id": "ai-landscape-design",
+      "name": "AI Landscape Design Tool",
+      "status": "ideation",
+      "priority": "high",
+      "description": "Client-facing AI tool that enables customers to submit pictures of their flower beds and receive AI-generated landscaping design recommendations",
+      "implementation_details": {
+        "workflow": [
+          "Client uploads photo of flower bed",
+          "Proprietary AI processes image and generates design options",
+          "Client receives instant quote",
+          "Sales rep scheduled to visit and confirm scope",
+          "Design validated and approved before work begins"
+        ],
+        "technical_requirements": [
+          "Image upload capability",
+          "AI/ML model for landscape design (computer vision + design generation)",
+          "Quote generation system tied to AI recommendations",
+          "Integration with sales workflow"
+        ],
+        "business_impact": "Streamlines lead qualification, accelerates sales cycle, improves customer experience with instant visualizations"
+      }
+    },
+    {
+      "id": "ai-crew-routing",
+      "name": "AI-Powered Crew Routing & Planning",
+      "status": "ideation",
+      "priority": "high",
+      "description": "Intelligent agent that optimizes daily crew routes and work planning using real-time feedback from service visits",
+      "implementation_details": {
+        "workflow": [
+          "Crew provides real-time feedback during service visits",
+          "AI agent processes feedback and historical service data",
+          "Routes are optimized for efficiency based on geographic data",
+          "Next-day work schedules are automatically optimized",
+          "Goals and priorities set dynamically based on data"
+        ],
+        "technical_requirements": [
+          "Real-time data collection from crew",
+          "Historical service database with location and time data",
+          "Route optimization algorithm",
+          "Mobile app for crew feedback submission",
+          "Scheduling system integration"
+        ],
+        "data_sources": [
+          "Previous service visit history",
+          "Property locations and access notes",
+          "Service duration data",
+          "Crew efficiency metrics",
+          "Geographic and traffic data"
+        ],
+        "business_impact": "Improves crew efficiency, reduces travel time, maximizes billable hours, enables better day-to-day planning"
+      }
+    }
+  ],
+  "future_roadmap": {
+    "phase_1": "Current core services optimization",
+    "phase_2": "AI landscape design tool development",
+    "phase_3": "Crew routing and planning system",
+    "phase_4": "Mobile crew app with real-time feedback",
+    "phase_5": "Advanced analytics and predictive modeling"
+  },
+  "notes": "These ideas represent John's vision for transforming Three Daughters from a service provider into a tech-enabled landscaping company. Start with AI landscape design as it has direct customer impact and faster ROI."
+}

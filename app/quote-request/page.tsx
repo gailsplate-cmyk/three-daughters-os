@@ -5,7 +5,7 @@ import { addLead } from "@/lib/business-data";
 export const metadata: Metadata = {
   title: "Request Quote",
   description:
-    "Request a landscaping quote with your property address, service needs, and project notes.",
+    "Get a free, detailed quote for your landscaping project. Share your property and goals.",
 };
 
 async function submitQuoteRequest(formData: FormData) {
@@ -41,16 +41,16 @@ export default function QuoteRequestPage() {
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-black/60">
           Quote Request
         </p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight">Request a Quote</h1>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-black/70">
-          Give us your property and scope details. This structured request helps us
-          return faster, cleaner quote options.
+        <h1 className="mt-4 text-4xl font-semibold tracking-tight">Get a Free Quote</h1>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-black/70">
+          Share your property address and what you&apos;re looking for. We&apos;ll follow up within 
+          24 hours with a clear, competitive quote—no hidden charges.
         </p>
 
         <form action={submitQuoteRequest} className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
           <label className="field-label">
             Full Name
-            <input name="fullName" className="field-input" placeholder="Taylor Johnson" required />
+            <input name="fullName" className="field-input" placeholder="Your Name" required />
           </label>
           <label className="field-label">
             Email
@@ -58,7 +58,7 @@ export default function QuoteRequestPage() {
               name="email"
               type="email"
               className="field-input"
-              placeholder="taylor@email.com"
+              placeholder="you@example.com"
               required
             />
           </label>
@@ -67,13 +67,15 @@ export default function QuoteRequestPage() {
             <input name="phone" className="field-input" placeholder="(555) 123-4567" required />
           </label>
           <label className="field-label">
-            Service Type
+            Primary Interest
             <select name="serviceType" className="field-input" required>
-              <option>Lawn Care</option>
-              <option>Landscape Cleanup</option>
-              <option>Mulching</option>
-              <option>Shrub Trimming</option>
-              <option>Other</option>
+              <option value="">Select a service</option>
+              <option>Routine Lawn Care</option>
+              <option>Seasonal Cleanup</option>
+              <option>Mulching & Bed Work</option>
+              <option>Shrub & Tree Trimming</option>
+              <option>Custom Project</option>
+              <option>Multiple Services</option>
             </select>
           </label>
           <label className="field-label md:col-span-2">
@@ -81,23 +83,26 @@ export default function QuoteRequestPage() {
             <input
               name="address"
               className="field-input"
-              placeholder="123 Main St, City, ST"
+              placeholder="123 Main Street, City, ST 12345"
               required
             />
           </label>
           <label className="field-label md:col-span-2">
-            Project Notes
+            Tell Us More (Optional)
             <textarea
               name="notes"
-              rows={5}
+              rows={4}
               className="field-input"
-              placeholder="Describe your goals, timeline, and any specific issues to address."
+              placeholder="Describe your property, any challenges, timeline preferences, or specific goals."
             />
           </label>
           <div className="md:col-span-2 pt-2">
             <button type="submit" className="btn-primary">
-              Submit Quote Request
+              Request Quote
             </button>
+            <p className="mt-3 text-xs text-black/60">
+              ✓ Free quote · ✓ No obligation · ✓ Response within 24 hours
+            </p>
           </div>
         </form>
       </div>
@@ -105,17 +110,32 @@ export default function QuoteRequestPage() {
       <aside className="space-y-4">
         <div className="card">
           <h2 className="text-lg font-semibold">What Happens Next</h2>
-          <ol className="mt-3 space-y-2 text-sm text-black/70">
-            <li>1. Request reviewed by office team.</li>
-            <li>2. Scope assumptions confirmed.</li>
-            <li>3. Quote delivered with schedule windows.</li>
+          <ol className="mt-3 space-y-3 text-sm text-black/70">
+            <li>
+              <span className="font-semibold text-black">1. We review</span> your request and 
+              confirm service area.
+            </li>
+            <li>
+              <span className="font-semibold text-black">2. We follow up</span> to schedule a 
+              property walk-through.
+            </li>
+            <li>
+              <span className="font-semibold text-black">3. We deliver</span> a detailed, 
+              transparent quote.
+            </li>
           </ol>
         </div>
         <div className="card">
-          <h2 className="text-lg font-semibold">Best Results Tip</h2>
+          <h2 className="text-lg font-semibold">Pro Tip</h2>
           <p className="mt-3 text-sm leading-6 text-black/70">
-            Mention gate codes, parking limits, pet considerations, and priority
-            areas so your first quote is as accurate as possible.
+            Include as much detail as possible: gate codes, lot size, existing landscaping 
+            challenges, and your goals. Better information = more accurate quote.
+          </p>
+        </div>
+        <div className="card bg-[var(--accent-soft)]">
+          <p className="text-sm font-semibold text-[var(--accent)]">Questions?</p>
+          <p className="mt-2 text-sm text-black/70">
+            Call us at <span className="font-semibold">(555) 123-4567</span> for immediate answers.
           </p>
         </div>
       </aside>
