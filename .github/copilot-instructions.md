@@ -1,0 +1,12 @@
+- [x] Verify that the copilot-instructions.md file in the .github directory is created. Completed in this project.
+- [x] Clarify Project Requirements. Stack set to VS Code + GitHub + Next.js + Tailwind + Supabase (planned) + Stripe (planned) + Vercel.
+- [x] Scaffold the Project. Next.js app scaffolded with TypeScript, Tailwind, App Router, and ESLint.
+- [x] Customize the Project. Implemented core website skeleton pages and branded layout.
+- [x] Install Required Extensions. No extensions explicitly required by setup instructions.
+- [x] Compile the Project. Lint and production build both pass.
+- [x] Create and Run Task. Added .vscode/tasks.json and executed Run Next.js Dev Server task.
+- [ ] Launch the Project. Ask user if they want debug launch now.
+- [x] Ensure Documentation is Complete. README.md and this file are current and comment-free.
+- Work through each checklist item systematically.
+- Keep communication concise and focused.
+- Follow development best practices.

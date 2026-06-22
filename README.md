@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Three Daughters Website + Business Hub (Phase 0)
 
-## Getting Started
+Lean Phase 0 build focused on immediate business value: a professional website plus a lightweight operations hub.
 
-First, run the development server:
+## Stack
+
+- Next.js (App Router, TypeScript)
+- Tailwind CSS
+- GitHub for source control
+- Vercel for deployment
+
+## What Is Implemented
+
+Customer-facing pages:
+
+- Home
+- About
+- Services
+- Contact
+- Request Quote
+
+Business-facing hub:
+
+- Lead tracking
+- Property records
+- Customer records
+- Quote management
+- Scheduling view
+- Invoice tracking
+
+## Quote Intake Flow
+
+- Quote form is live and submits through a server action.
+- Submissions appear in the Business Hub lead list.
+- New customer/property records are auto-created from new leads.
+
+Note: Current data storage is in-memory for low-cost Phase 0 speed. Data resets when the server restarts.
+
+## Run Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Deployment (Vercel)
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this folder to GitHub.
+2. Import the repository into Vercel.
+3. Deploy from the default branch.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Recommended Next Upgrade (When Budget Allows)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Swap in-memory store for Supabase tables.
+2. Add authentication for Business Hub.
+3. Add Stripe payment links for invoices.
