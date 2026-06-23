@@ -1,38 +1,11 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
-import { addLead } from "@/lib/business-data";
+import { QuoteRequestForm } from "./quote-form";
 
 export const metadata: Metadata = {
   title: "Request Quote",
   description:
     "Get a free, detailed quote for your landscaping project. Share your property and goals.",
 };
-
-async function submitQuoteRequest(formData: FormData) {
-  "use server";
-
-  const fullName = String(formData.get("fullName") ?? "").trim();
-  const email = String(formData.get("email") ?? "").trim();
-  const phone = String(formData.get("phone") ?? "").trim();
-  const serviceType = String(formData.get("serviceType") ?? "").trim();
-  const address = String(formData.get("address") ?? "").trim();
-  const notes = String(formData.get("notes") ?? "").trim();
-
-  if (!fullName || !email || !phone || !serviceType || !address) {
-    redirect("/quote-request");
-  }
-
-  addLead({
-    fullName,
-    email,
-    phone,
-    address,
-    serviceType,
-    notes,
-  });
-
-  redirect("/quote-request/thank-you");
-}
 
 export default function QuoteRequestPage() {
   return (
@@ -47,64 +20,7 @@ export default function QuoteRequestPage() {
           24 hours with a clear, competitive quote—no hidden charges.
         </p>
 
-        <form action={submitQuoteRequest} className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-          <label className="field-label">
-            Full Name
-            <input name="fullName" className="field-input" placeholder="Your Name" required />
-          </label>
-          <label className="field-label">
-            Email
-            <input
-              name="email"
-              type="email"
-              className="field-input"
-              placeholder="you@example.com"
-              required
-            />
-          </label>
-          <label className="field-label">
-            Phone
-            <input name="phone" className="field-input" placeholder="(555) 123-4567" required />
-          </label>
-          <label className="field-label">
-            Primary Interest
-            <select name="serviceType" className="field-input" required>
-              <option value="">Select a service</option>
-              <option>Routine Lawn Care</option>
-              <option>Seasonal Cleanup</option>
-              <option>Mulching & Bed Work</option>
-              <option>Shrub & Tree Trimming</option>
-              <option>Custom Project</option>
-              <option>Multiple Services</option>
-            </select>
-          </label>
-          <label className="field-label md:col-span-2">
-            Property Address
-            <input
-              name="address"
-              className="field-input"
-              placeholder="123 Main Street, City, ST 12345"
-              required
-            />
-          </label>
-          <label className="field-label md:col-span-2">
-            Tell Us More (Optional)
-            <textarea
-              name="notes"
-              rows={4}
-              className="field-input"
-              placeholder="Describe your property, any challenges, timeline preferences, or specific goals."
-            />
-          </label>
-          <div className="md:col-span-2 pt-2">
-            <button type="submit" className="btn-primary">
-              Request Quote
-            </button>
-            <p className="mt-3 text-xs text-black/60">
-              ✓ Free quote · ✓ No obligation · ✓ Response within 24 hours
-            </p>
-          </div>
-        </form>
+        <QuoteRequestForm />
       </div>
 
       <aside className="space-y-4">
